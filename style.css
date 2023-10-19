@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url("./img/background.png");
+    font-family: 'Righteous', sans-serif;
+}
+
+header {
+    background-color: #161423;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px 1px 1px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 0px 0px 14px rgba(242, 0, 0, 0.521);
+    color: #9D0000;
+    font-size: 24px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+.results-ui {
+    display: flex;
+    flex-direction: column;
+    width: 584px;
+    height: 350px;
+    background-color: #15151A;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    font-size: 18px;
+    box-shadow: 0px 0px 10px #8312c4;
+}
+
+.results-ui > h3 {
+    font-size: 32px;
+}
+
+.results-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.score-count {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.player,
+.computer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    font-size: 18px;
+}
+
+.computer > .choice-card,
+.player > .choice-card{
+    color: black;
+    font-size: 24px;
+}
+
+.choice-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 165px;
+    height: 165px;
+    background-color: #D9D9D9;
+    box-shadow: 0px 0px 14px #12c2c4;
+    border-radius: 4px;
+}
+
+.choice-ui  .choice-card:hover {
+    box-shadow: 0px 0px 24px #6cb3b6;
+    width: 170px;
+    height: 170px;
+}
+
+.choice-ui  .choice-card:active {
+    box-shadow: 0px 0px 24px #0a83a1;
+    width: 165px;
+    height: 165px;
+}
+
+.rock {
+    transform: rotate(-30deg);
+}
+
+.paper {
+    transform: rotate(-30deg);
+}
+
+.scissors {
+    transform: rotate(30deg);
+}
+
+.choice-ui {
+    display: flex;
+    flex-direction: column;
+    width: 584px;
+    height: 280px;
+    background-color: #15151A;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    box-shadow: 0px 0px 10px #8312c4;
+    gap: 24px;
+    font-size: 24px;
+}
+
+.choice-block {
+    display: flex;
+    gap: 24px;
+}
+
+footer {
+    background-color: #161423;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px 1px 1px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 0px 0px 14px rgba(98, 25, 191, 0.69);
+    color: #640FA7;
+    font-size: 18px;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    z-index: -1;
+    opacity: 0;
+}
+
+.modal.show {
+    visibility: visible;
+    z-index: 100;
+    opacity: 1;
+}
+
+.modal .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.7;
+    z-index: 0;
+}
+
+.modal-window {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    width: 450px;
+    text-align: center;
+    border-radius: 4px;
+    background-color: #161423;
+    box-shadow: 1px 1px 1px 4px rgba(0, 0, 0, 0.5);
+    padding: 50px;
+    color: white;
+    font-size: 24px;
+    gap: 15px;
+}
+
+.modal-window > button {
+    width: 150px;
+    height: 42px;
+    background-color: #6c13a0;
+    border-radius: 4px;
+    box-shadow: 0px 0px 10px #8312c4;
+    border: 1px solid black;
+    color: white;
+    font-family: 'Righteous', sans-serif;
+    font-size: 18px;
+}
+
+.modal-window > button:hover {
+    width: 155px;
+    height: 44px;
+    box-shadow: 0px 0px 10px #a40dfc;
+}
+
+.modal-window > button:active {
+    width: 150px;
+    height: 42px;
+    box-shadow: 0px 0px 10px #880ecf;
+}
