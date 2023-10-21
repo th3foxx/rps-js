@@ -27,6 +27,16 @@ function game() {
         modalWindow.classList.toggle("show");
     });
 
+/* This code block is adding an event listener to the `playBtn` element. When the button is clicked, it
+performs the following actions:
+- Sets the `gameOver` variable to `false`.
+- Resets the `playerScore` and `computerScore` variables to 0.
+- Updates the text content of the `playerScoreBlock` and `computerScoreBlock` elements to display
+the updated scores.
+- Toggles the "show" class on the `modalWindow` element, hiding it from view.
+- Clears the text content of the `roundResult`, `resultDiscription`, and `gameResult` elements.
+- Sets the text content of the `playerCard` and `computerCard` elements to "?" to hide the previous
+choices. */
     playBtn.addEventListener("click", () => {
         gameOver = false;
         playerScore = 0;
@@ -46,6 +56,11 @@ function game() {
     });
   
     
+/**
+ * The function `getComputerChoice()` randomly selects a choice (rock, paper, or scissors) for the
+ * computer and updates the corresponding image and text on the computer's card.
+ * @returns The variable `result` is being returned.
+ */
     function getComputerChoice() {
         let result;
     
@@ -80,6 +95,12 @@ function game() {
         return result;
     }
     
+/**
+ * The function sets the image and alt text of the player's card based on their choice of rock, paper,
+ * or scissors.
+ * @param playerChoice - The parameter `playerChoice` is a string that represents the choice made by
+ * the player. It can be one of three values: "rock", "paper", or "scissors".
+ */
     function setPlayerChoiceImg(playerChoice) {
         switch(playerChoice) {
             case "rock":
@@ -106,6 +127,14 @@ function game() {
         };
     };
 
+/**
+ * The function `playRound` determines the winner of a round of rock-paper-scissors and updates the
+ * scores accordingly.
+ * @param computerSelection - The computer's selection in the game. It can be either "rock", "paper",
+ * or "scissors".
+ * @param playerSelection - The player's selection in the game. It can be "rock", "paper", or
+ * "scissors".
+ */
     function playRound(computerSelection, playerSelection) {
         let result;
 
@@ -148,6 +177,17 @@ function game() {
 
     const choiceBtns = document.querySelectorAll(".choice-card-btn");
 
+/* This code block is adding an event listener to each element in the `choiceBtns` array. When one of
+the buttons is clicked, the following actions are performed:
+- The `getComputerChoice()` function is called to randomly select a choice for the computer.
+- The `id` of the clicked button is assigned to the `playerSelection` variable.
+- The `setPlayerChoiceImg()` function is called to set the image and alt text of the player's card
+based on their choice.
+- If the `gameOver` variable is `false`, the `playRound()` function is called with the
+`computerSelection` and `playerSelection` as arguments to determine the winner of the round and
+update the scores.
+- The `checkWin()` function is called with the `playerScore` and `computerScore` as arguments to
+check if either player has reached a score of 5 and end the game if necessary. */
     choiceBtns.forEach((choice) => {
         choice.addEventListener("click", () => {
             const computerSelection = getComputerChoice();
@@ -160,6 +200,12 @@ function game() {
         });
     });
 
+/**
+ * The function `checkWin` checks if the player or computer has reached a score of 5 and displays the
+ * corresponding game result message.
+ * @param playerScore - The score of the player in the game.
+ * @param computerScore - The computer's score in the game.
+ */
     function checkWin(playerScore, computerScore) {
         if (playerScore === 5) {
             gameOver = true;
